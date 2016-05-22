@@ -9,8 +9,8 @@ The complete data sets can be downloaded here: https://d396qusza40orc.cloudfront
 
 For Convenience below a copy of the feature measurements and variables estamed from these features:
 
-Feature Selection from original dataset 
-----------------------------------------
+###Feature Selection from original dataset 
+
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -21,72 +21,72 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+*tBodyAcc-XYZ
+*tGravityAcc-XYZ
+*tBodyAccJerk-XYZ
+*tBodyGyro-XYZ
+*tBodyGyroJerk-XYZ
+*tBodyAccMag
+*tGravityAccMag
+*tBodyAccJerkMag
+*tBodyGyroMag
+*tBodyGyroJerkMag
+*fBodyAcc-XYZ
+*fBodyAccJerk-XYZ
+*fBodyGyro-XYZ
+*fBodyAccMag
+*fBodyAccJerkMag
+*fBodyGyroMag
+*fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-mad(): Median absolute deviation 
-max(): Largest value in array
-min(): Smallest value in array
-sma(): Signal magnitude area
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
+*mean(): Mean value
+*std(): Standard deviation
+*mad(): Median absolute deviation 
+*max(): Largest value in array
+*min(): Smallest value in array
+*sma(): Signal magnitude area
+*energy(): Energy measure. Sum of the squares divided by the number of values. 
+*iqr(): Interquartile range 
+*entropy(): Signal entropy
+*arCoeff(): Autorregresion coefficients with Burg order equal to 4
+*correlation(): correlation coefficient between two signals
+*maxInds(): index of the frequency component with largest magnitude
+*meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+*skewness(): skewness of the frequency domain signal 
+*kurtosis(): kurtosis of the frequency domain signal 
+*bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+*angle(): Angle between to vectors.
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+*gravityMean
+*tBodyAccMean
+*tBodyAccJerkMean
+*tBodyGyroMean
+*tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt' 
 
-Variables Filtered for this assignment
---------------------------------------
+###Variables Filtered for this assignment
+
 Only the Standard Deviation and Mean variable calculations where required from all feature measurement calculations listed above.   
 These variables were filtered out from data set using the run_analysis.R script
 
-Operations performed on filtered feature variable descriptions/names to make tidy data set
-------------------------------------------------------------------------------------------
+###Operations performed on filtered feature variable descriptions/names to make tidy data set
+
 * Change descriptions to lower case
 * Remove following characters : "(",")","-"
 * Remove duplicated phrases such as "bodybody"
 
-Two columns were added to the filtered variable data set
---------------------------------------------------------
+###Two columns were added to the filtered variable data set
+
 *activity (Type of measurement activity: WALKING, WALKING_UPSTRAIRS, WALKING_DOWNSTAIRS, STANDING, SITTING, LAYING)
 *subject (Person performing activity: 1-30)
 
-Final tidy variable result from above transformations
------------------------------------------------------
+###Final tidy variable result from above transformations
+
 *	activity
 *	subject
 *	tbodyaccstdz
