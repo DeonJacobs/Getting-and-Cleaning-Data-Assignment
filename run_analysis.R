@@ -1,5 +1,5 @@
 ##Programmer: Deon Jacobs
-##Date: 2016-05-18
+##Date: 2016-05-21
 ##Script Description: 
 ##1. This script transforms the UCI HAR Dataset to a tidy dataset with filtered variables on 
 ##  standard deviation and mean calculations for every subject and activity measurements.
@@ -31,8 +31,10 @@ run_analysis <- function(){
   #Load Feature Vector Description Data set
   featureDesSet <- read.table(file.path(path,"features.txt"),header=FALSE,col.names=c("id","feature"))
   
+  
   #Unlist feature description set and change to lower case for tidy data and simplified searching with metacharacters
   featureDesSet <- unlist(tolower(featureDesSet$feature))
+  
   
   #Rename columns of training and test sets with features descriptions
   names(testSet) <- featureDesSet
@@ -53,6 +55,7 @@ run_analysis <- function(){
   #Assign appropriate activity names to activity columns replacing numeric values
   #convert acivity column type to character
   filteredSet$activity <- as.character(filteredSet$activity)
+  #Rename activity values to appropriate description
   filteredSet$activity[filteredSet$activity=="1"] <- "WALKING"
   filteredSet$activity[filteredSet$activity=="2"] <- "WALKING_UPSTAIRS"
   filteredSet$activity[filteredSet$activity=="3"] <- "WALKING_DOWNSTAIRS"
@@ -68,11 +71,11 @@ run_analysis <- function(){
   
   
   #Generate second data set with average of each variable for each activity and each subject
-  aveTidyDataSet <- arrange(outputf,subject,activity) %>% 
+  aveTidyDataSet <- arrange(filteredSet,subject,activity) %>% 
                     group_by(activity,subject) %>% 
                     summarise_each(funs(mean))
+  
   aveTidyDataSet
-
 }
   
   
