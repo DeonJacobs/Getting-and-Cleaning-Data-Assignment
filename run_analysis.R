@@ -49,7 +49,7 @@ run_analysis <- function(){
   
   #Extract only std() and mean() measurement variables from complete data set
   #Appropriate columns including subject and activity variables with standard deviation and mean variables
-  columnSelect <- c("subject","activity",featureDesSet[c(grep(pattern="-std()",featureDesSet),grep(pattern="-mean()",featureDesSet))])
+  columnSelect <- c("subject","activity",featureDesSet[c(grep(pattern="std\\(\\)",featureDesSet),grep(pattern="-mean\\(\\)",featureDesSet))])
   filteredSet <- completeSet[columnSelect]
   
   #Assign appropriate activity names to activity columns replacing numeric values
@@ -75,6 +75,8 @@ run_analysis <- function(){
                     group_by(activity,subject) %>% 
                     summarise_each(funs(mean))
   
+  #Write averaged data to *.txt file
+  write.table(aveTidyDataSet, "AvgTidyData.txt", row.name=FALSE)
   aveTidyDataSet
 }
   

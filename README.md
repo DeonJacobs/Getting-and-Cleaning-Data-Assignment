@@ -80,4 +80,7 @@ The script assumes the zip file was already downloaded, unzipped and stored at t
 		aveTidyDataSet <- arrange(filteredSet,subject,activity) %>% 
         group_by(activity,subject) %>% 
         summarise_each(funs(mean))
+
+###8. Write averaged tidy data to .txt file
 		
+		write.table(aveTidyDataSet, "AvgTidyData.txt", row.name=FALSE)
