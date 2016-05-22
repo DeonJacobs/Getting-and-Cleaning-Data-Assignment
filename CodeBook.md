@@ -9,7 +9,7 @@ The complete data sets can be downloaded here: https://d396qusza40orc.cloudfront
 
 For Convenience below a copy of the feature measurements and variables estamed from these features:
 
-###Feature Selection from original dataset 
+###Feature Selection from Original Dataset 
 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
@@ -69,23 +69,23 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 
 The complete list of variables of each feature vector is available in 'features.txt' 
 
-###Variables Filtered for this assignment
+###Variables Filtered for this Assignment
 
 Only the Standard Deviation and Mean variable calculations where required from all feature measurement calculations listed above.   
 These variables were filtered out from data set using the run_analysis.R script
 
-###Operations performed on filtered feature variable descriptions/names to make tidy data set
+###Operations Performed on Filtered Feature Variable Descriptions/Names to Make Tidy Data Set
 
 * Change descriptions to lower case
 * Remove following characters : "(",")","-"
 * Remove duplicated phrases such as "bodybody"
 
-###Two columns were added to the filtered variable data set
+###Two Columns Were Added to the Filtered Variable Data Set
 
-*activity (Type of measurement activity: WALKING, WALKING_UPSTRAIRS, WALKING_DOWNSTAIRS, STANDING, SITTING, LAYING)
-*subject (Person performing activity: 1-30)
+* activity (Type of measurement activity: WALKING, WALKING_UPSTRAIRS, WALKING_DOWNSTAIRS, STANDING, SITTING, LAYING)
+* subject (Person performing activity: 1-30)
 
-###Final tidy variable result from above transformations
+###Final Tidy Variable Result from Above Transformations
 
 *	activity
 *	subject
